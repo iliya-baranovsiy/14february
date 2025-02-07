@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(147, 17, 69);
+    margin: 0;
+    overflow: hidden;
+}
+
+#first, #second, #third {
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#first {
+    color: aliceblue;
+    position: absolute;
+    margin-left: 166px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#second {
+    color: aliceblue;
+    position: absolute;
+    margin-left: 101px;
+    margin-top: 165px;
+    font-size: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#third {
+    color: aliceblue;
+    position: absolute;
+    margin-left: 111px;
+    margin-top: 274px;
+    font-size: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+img {
+    width: 60%; 
+    max-width: 500px; 
+    height: auto;
+    margin-top: 370px
+}
+
+#heart-container {
+    position: absolute; /* Относительно верхнего уровня */
+    width: 100%;
+    height: 100vh; /* Полная высота экрана */
+    top: 0; /* Установим сверху */
+    left: 0; /* Установим слева */
+}
+
+.heart {
+    position: absolute;
+    width: 60px; /* Ширина сердечка */
+    height: 60px; /* Высота сердечка */
+    background-color: red; /* Цвет сердечка */
+    animation: fall linear forwards; /* Анимация падения */
+    transform: rotate(45deg); /* Поворачиваем на 45 градусов */
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    display: block;
+    width: 60px; /* Ширина передней части сердечка */
+    height: 60px; /* Высота передней части сердечка */
+    background-color: red;
+    border-radius: 50%; /* Делаем круглыми */
+    position: absolute;
+}
+
+/* Сдвигаем верхние круги, чтобы они образовали сердечко */
+.heart::before {
+    top: -30px; /* Сдвиг вверх */
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -30px; /* Сдвиг влево */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(45deg); /* Падает вниз */
+        opacity: 0; /* Исчезает */
+    }
+}
